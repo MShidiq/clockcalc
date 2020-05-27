@@ -9,61 +9,80 @@ a = Clock(10,30)
 b = Clock( 5, 0)
 c = Clock( 0,30)
 
+print('a:', a)
+print('b:', b)
+print('c:', c)
+
+print()
+
 # ARITHMETIC
 # ===========
 
 # add - clocks future
-print(a + b)
+print('a + b:', a + b)
 
 # sub - interval or pass hours
-print(a - b)
+print('a - b:', a - b)
 
 # floordiv - division
-print(a // c)
+print('a // b:', a // c)
 
 # mul - multiplication
-print(b * c)
+print('b * c:', b * c)
 
-print(a)
-a = Clock(a + b)
-print(a)
+
+print()
+
 
 # COMPARISON
 # ===========
 
 # is equals?
-print(a == Clock(10,30))
+print('a == Clock(10,30):', a == Clock(10,30))
 
 # is not equals?
-print(a != b)
+print('a != b:', a != b)
 
 # is greater than?
-print(a > b)
+print('a > b:', a > b)
 
 # is less than?
-print(b < a)
+print('b < a:', b < a)
 
 # is greater or equals?
-print(c >= Clock(0,30))
+print('c >= Clock(0,30):', c >= Clock(0,30))
 
 # is less that or equals?
-print(c <= Clock(0,15))
+print('c <= Clock(0,15):', c <= Clock(0,15))
 
+print()
 
+# AUGMENTED ASIGNMENT
+# ===================
+x = Clock(9,30)
+y = Clock(0,30)
+x += y
+print('x :', x)
+
+print()
 
 # CLOCK ATTRIBUTES
 #==================
 
 # .increase(minute) - increasing the clock by minute
+print('a:', a)
 a.increase(30)
-print(a)
+print('a.increase(30):', a)
 
 # .decrease(minute) - decreasing the clock by minute
+print('b:', b)
 b.decrease(120)
-print(b)
+print('b.decrease(60):', b)
 
 # .center() - the center clock of the clock
-print(a.center(b))
+print('a:', a)
+print('b:', b)
+print('a.center(b):', a.center(b))
 
 # .quarter() - the quarter times point
 print(Clock(12,0).quarter())

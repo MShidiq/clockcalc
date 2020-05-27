@@ -80,6 +80,31 @@ class Clock:
         return hours(self.minute * t.minute)
 
 
+    def __iadd__(self, other):
+        self.minute += other.minute
+        self.time = hours(self.minute)
+        self.ltime = list(self.time)
+        return self.time
+
+    def __isub__(self, other):
+        self.minute -= other.minute
+        self.time = hours(self.minute)
+        self.ltime = list(self.time)
+        return self.time
+
+    def __imul__(self, other):
+        self.minute *= other.minute
+        self.time = hours(self.minute)
+        self.ltime = list(self.time)
+        return self.time
+
+    def __ifloordiv__(self, other):
+        self.minute //= other.minute
+        self.time = hours(self.minute)
+        self.ltime = list(self.time)
+        return self.time
+
+
     def __eq__(self, t):
         return self.minute == t.minute
 
