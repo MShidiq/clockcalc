@@ -1,11 +1,12 @@
 #!/usr/bin/env python
-# 
-# Clockalc - counting the clock
-# ========_=_========_===_=====
-# 
+# -*- coding: utf-8 -*- 
+# Clockalc
+# ========
+# counting the clocks
+#
 #   author = Maulana Shidiq
 #   email  = mshidiq98@gmail.com
-#   github = MShidiq
+#   github = https://github.com/MShidiq
 # 
 
 def minutes(*clock):
@@ -68,37 +69,45 @@ class Clock:
 
 
     def __add__(self, t):
+        # arithmetic operation : addition
         return hours(self.minute + t.minute)
 
     def __sub__(self, t):
+        # arithmetic operation : substitution
         return hours(self.minute - t.minute)
 
     def __floordiv__(self, t):
+        # arithmetic operation : floor division
         return hours(self.minute // t.minute)
 
     def __mul__(self, t):
+        # arithmetic operation : multiplication
         return hours(self.minute * t.minute)
 
 
     def __iadd__(self, other):
+        # augmented assignment : addition
         self.minute += other.minute
         self.time = hours(self.minute)
         self.ltime = list(self.time)
         return self.time
 
     def __isub__(self, other):
+        # augmented assignment : subtraction
         self.minute -= other.minute
         self.time = hours(self.minute)
         self.ltime = list(self.time)
         return self.time
 
     def __imul__(self, other):
+        # augmented assignment : multiplication
         self.minute *= other.minute
         self.time = hours(self.minute)
         self.ltime = list(self.time)
         return self.time
 
     def __ifloordiv__(self, other):
+        # augmented assignment : floor division
         self.minute //= other.minute
         self.time = hours(self.minute)
         self.ltime = list(self.time)
@@ -106,21 +115,27 @@ class Clock:
 
 
     def __eq__(self, t):
+        # comparison operation : equals
         return self.minute == t.minute
 
     def __ne__(self, t):
+        # comparison operation : not equals
         return self.minute != t.minute
 
     def __lt__(self, t):
+        # comparison operation : less than
         return self.minute < t.minute
 
     def __gt__(self, t):
+        # comparison operation : greater than
         return self.minute > t.minute
         
     def __le__(self, t):
+        # comparison operation : less or equals
         return self.minute <= t.minute
 
     def __ge__(self, t):
+        # comparison operation : greater or equals
         return self.minute >= t.minute
         
 
